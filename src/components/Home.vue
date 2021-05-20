@@ -1,7 +1,11 @@
 <template>
     <div>
         <h1>CHARTS</h1>
-        <line-chart />
+        <div>
+            <line-chart 
+            style="width: 100%; height: 100%"
+/>
+        </div>
     </div>
 </template>
 

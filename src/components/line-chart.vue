@@ -7,16 +7,39 @@ export default {
     data() {
         return {
             chartdata: {
-                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                labels: ["<3'", "4-5'", "6-10'", "11-15'", "16-20'", "21-30'", "31-50'" ],
                 datasets: [
                     {
-                    label: 'Data One',
-                    backgroundColor: '#f87979',
-                    data: [40, 39, 10, 40, 39, 80, 40]
+                    backgroundColor: '#54AE47',
+                    data: [100, 75, 50, 100, 50, 25, 37],
+                    tension: 0.0
                     }
                 ]
+                // yAxes: {
+                //     labels: [
+                //         '0%', '25%', '50%', '75%', '100%'
+                //     ]
+                // }
             },
-            options: {responsive: true, maintainAspectRatio: false}
+            options: {
+                responsive: true, 
+                maintainAspectRatio: false,
+                layout: {
+                    padding: 20
+                },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        min: 0,
+                        stepSize: 25,
+
+                        callback: function(value) {
+                            return value + '%'
+                        }
+                    }
+                }]
+            }
+            }
         }
     },
     mounted() {
