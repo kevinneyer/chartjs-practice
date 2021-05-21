@@ -1,21 +1,20 @@
 <template>
     <div>
         <h1>CHARTS</h1>
-        <div>
-            <line-chart 
-            style="width: 100%; height: 100%"
-/>
-        </div>
+        <LineContainer />
+        <BarContainer />
     </div>
 </template>
 
 <script>
-import LineChart from './line-chart.vue'
+import LineContainer from './LineContainer'
+import BarContainer from './BarContainer'
 
 export default {
     name: 'Home',
     components:{
-        LineChart
+        LineContainer,
+        BarContainer
     }
 }
 </script> 
