@@ -14,7 +14,6 @@ export default {
                     label: 'You',
                     data: this.chartData.data,
                     backgroundColor: 'rgba(84, 174, 71, 0.8)',
-                    // fillOpacity: .8, 
                     tension: 0.0
                     },
                     {
@@ -47,6 +46,11 @@ export default {
                             }
                         }
                     }]
+                },
+                elements: {
+                    point:{
+                        radius: 0
+                    }
                 }
             }
         )
