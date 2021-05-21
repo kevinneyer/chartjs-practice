@@ -6,6 +6,24 @@ export default {
     name: 'bar-chart',
     extends: Bar,
     props:['chartData'],
+    data() {
+        return {
+             data: [5,5,5,5,5]
+        }
+    },
+    methods: {
+        findMaxBar() {
+            let allData = this.data.concat(this.chartData.data)
+            let max;
+            for(let i = 0; i < allData.length; i++){
+                max = allData[0]
+                if( allData[i] > max){
+                    max = allData[i]
+                }
+            }
+            return max
+        }
+    },
     mounted() {
         this.renderChart(
             {
@@ -18,7 +36,7 @@ export default {
                     },
                     {
                     label: '0-2 Handicap',
-                    data: [5,5,5,5,5],
+                    data: this.data,
                     backgroundColor: 'rgba(234, 138, 59, 1)'
                     }
                 ]
@@ -31,9 +49,13 @@ export default {
                 },
                 scales: {
                     yAxes: [{
+                        grid: {
+                           display: false
+                        },
                         ticks: {
                             min: 0,
-                            stepSize: 2,
+                            stepSize: this.findMaxBar() / 2,
+                            max: this.findMaxBar() + 2,
                             
                             callback: function(value) {
                                 if (typeof(value) === 'number'){
@@ -44,7 +66,7 @@ export default {
                     }]
                 },
             }
-            )
+        )
     }
 }
 </script>
