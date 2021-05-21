@@ -11,8 +11,16 @@ export default {
                 labels: this.chartData.labels,
                 datasets: [
                     {
+                    label: 'You',
                     data: this.chartData.data,
-                    backgroundColor: '#54AE47',
+                    backgroundColor: 'rgba(84, 174, 71, 0.8)',
+                    // fillOpacity: .8, 
+                    tension: 0.0
+                    },
+                    {
+                    label: '0-2 Handicap',
+                    data: [95, 70, 45, 15, 25, 12.5, 5, 0],
+                    backgroundColor: 'rgba(234, 138, 59, 0.5)',
                     tension: 0.0
                     }
                 ]
@@ -22,6 +30,11 @@ export default {
                 maintainAspectRatio: false,
                 layout: {
                     padding: 20
+                },
+                plugins: {
+                    tooltip: {
+                        enabled: false
+                    }
                 },
                 scales: {
                     yAxes: [{
