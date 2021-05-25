@@ -17,7 +17,7 @@ export default {
             let max;
             for(let i = 0; i < allData.length; i++){
                 max = allData[0]
-                if( allData[i] > max){
+                if( allData[i] > max ){
                     max = allData[i]
                 }
             }
@@ -32,12 +32,14 @@ export default {
                     {
                     label: 'You',
                     data: this.chartData.data,
-                    backgroundColor: '#54AE47'
+                    backgroundColor: '#54AE47',
+                    // box-shadow: -20px 0px 0px 0px rgba(0, 0, 0, 0.05) inset;
                     },
                     {
                     label: '0-2 Handicap',
                     data: this.data,
-                    backgroundColor: 'rgba(234, 138, 59, 1)'
+                    backgroundColor: 'rgba(234, 138, 59, 1)',
+                    borderRadius: {topLeft: 10, topRight:10}
                     }
                 ]
             },
@@ -49,13 +51,13 @@ export default {
                 },
                 scales: {
                     yAxes: [{
-                        grid: {
-                           display: false
+                        gridLines: {
+                            drawBorder: false,
                         },
                         ticks: {
                             min: 0,
                             stepSize: this.findMaxBar() / 2,
-                            max: this.findMaxBar() + 2,
+                            max: this.findMaxBar() * 2,
                             
                             callback: function(value) {
                                 if (typeof(value) === 'number'){
@@ -63,8 +65,13 @@ export default {
                                 }
                             }
                         }
-                    }]
-                },
+                    }],
+                    xAxes: [{
+                        gridLines: {
+                            display: false,
+                        }
+                    }],
+                }
             }
         )
     }
