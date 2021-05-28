@@ -39,7 +39,7 @@ export default {
                     label: '0-2 Handicap',
                     data: this.data,
                     backgroundColor: 'rgba(234, 138, 59, 1)',
-                    borderRadius: {topLeft: 10, topRight:10}
+                    borderRadius: 5
                     }
                 ]
             },
