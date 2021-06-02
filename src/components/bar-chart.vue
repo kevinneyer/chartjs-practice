@@ -1,6 +1,6 @@
 <script>
 
-import { Bar } from 'vue-chartjs'
+import { Bar } from "vue-chartjs";
 
 export default {
     name: 'bar-chart',
@@ -32,14 +32,13 @@ export default {
                     {
                     label: 'You',
                     data: this.chartData.data,
+                    borderRadius: 10,
                     backgroundColor: '#54AE47',
-                    // box-shadow: -20px 0px 0px 0px rgba(0, 0, 0, 0.05) inset;
                     },
                     {
                     label: '0-2 Handicap',
                     data: this.data,
-                    backgroundColor: 'rgba(234, 138, 59, 1)',
-                    borderRadius: 5
+                    backgroundColor: 'rgba(234, 138, 59, 1)'                    
                     }
                 ]
             },
@@ -72,6 +71,16 @@ export default {
                         }
                     }],
                 }
+                // elements: {
+                //     bar: {
+                //         borderRadius: {
+                //             topRight: 10,
+                //             topLeft: 10,
+                //             bottomLeft: 0,
+                //             bottomRight: 0
+                //         }
+                //     }
+                // }
             }
         )
     }
